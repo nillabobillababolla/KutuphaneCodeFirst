@@ -9,7 +9,7 @@ namespace KutuphaneCodeFirst.Migrations
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(KutuphaneCodeFirst.MyContext context)
+        protected override void Seed(MyContext context)
         {
             //  This method will be called after migrating to the latest version.
 
