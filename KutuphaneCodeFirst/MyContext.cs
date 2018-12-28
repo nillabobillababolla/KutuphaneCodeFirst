@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using KutuphaneCodeFirst.Entities;
+using System.Data.Entity;
 
 namespace KutuphaneCodeFirst
 {
@@ -6,7 +7,10 @@ namespace KutuphaneCodeFirst
     {
         public MyContext() : base("MyCon")
         {
-            
+           
         }
+        public virtual DbSet<Kitap> Kitaplar { get; set; }
+        public virtual DbSet<Yazar> Yazarlar { get; set; }
     }
+    
 }
