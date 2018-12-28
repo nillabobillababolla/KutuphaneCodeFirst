@@ -36,25 +36,25 @@
             // lstKitaplar
             // 
             this.lstKitaplar.FormattingEnabled = true;
-            this.lstKitaplar.Location = new System.Drawing.Point(12, 93);
+            this.lstKitaplar.Location = new System.Drawing.Point(12, 96);
             this.lstKitaplar.Name = "lstKitaplar";
-            this.lstKitaplar.Size = new System.Drawing.Size(626, 342);
+            this.lstKitaplar.Size = new System.Drawing.Size(272, 342);
             this.lstKitaplar.TabIndex = 0;
             // 
             // lstYazarlar
             // 
             this.lstYazarlar.FormattingEnabled = true;
-            this.lstYazarlar.Location = new System.Drawing.Point(644, 93);
+            this.lstYazarlar.Location = new System.Drawing.Point(352, 96);
             this.lstYazarlar.Name = "lstYazarlar";
-            this.lstYazarlar.Size = new System.Drawing.Size(154, 342);
+            this.lstYazarlar.Size = new System.Drawing.Size(272, 342);
             this.lstYazarlar.TabIndex = 0;
             // 
             // lstCalisanlar
             // 
             this.lstCalisanlar.FormattingEnabled = true;
-            this.lstCalisanlar.Location = new System.Drawing.Point(804, 93);
+            this.lstCalisanlar.Location = new System.Drawing.Point(692, 96);
             this.lstCalisanlar.Name = "lstCalisanlar";
-            this.lstCalisanlar.Size = new System.Drawing.Size(160, 342);
+            this.lstCalisanlar.Size = new System.Drawing.Size(272, 342);
             this.lstCalisanlar.TabIndex = 0;
             // 
             // Form1

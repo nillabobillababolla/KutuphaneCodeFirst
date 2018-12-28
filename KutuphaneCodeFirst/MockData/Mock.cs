@@ -2,6 +2,7 @@
 
 using KutuphaneCodeFirst.Entities;
 using System.Collections.Generic;
+using KutuphaneCodeFirst.ViewModels;
 
 namespace KutuphaneCodeFirst.MockData
 {
@@ -11,16 +12,16 @@ namespace KutuphaneCodeFirst.MockData
         public static List<Kitap> Kitaplar { get; set; }
         public static List<Kiralayan> Kiralayanlar { get; set; }
         public static List<Calisan> Calisanlar { get; set; }
+        public static List<KitapViewModel> KitapKategoriYazar { get; set; }
 
-    
-       static Mock()
+        static Mock()
         {
             Yazarlar = new List<Yazar>();
             Kitaplar = new List<Kitap>();
             Kiralayanlar = new List<Kiralayan>();
             Calisanlar = new List<Calisan>();
 
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 25; i++)
             {
                 Yazarlar.Add(new Yazar()
                 {
@@ -29,10 +30,10 @@ namespace KutuphaneCodeFirst.MockData
                 });
             }
 
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 25; i++)
             {
-                var kat = FakeData.TextData.GetSentence();
-                var ad = FakeData.NameData.GetCompanyName();
+                var kat = FakeData.TextData.GetAlphabetical(10);
+                var ad = FakeData.TextData.GetAlphabetical(10);
                 Kitaplar.Add(new Kitap()
                 {
                     KitapAdi = ad.Length > 50 ? ad.Substring(0, 10) : ad,
@@ -41,7 +42,7 @@ namespace KutuphaneCodeFirst.MockData
                 });
             }
 
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 25; i++)
             {
                 Kiralayanlar.Add(new Kiralayan()
                 {
@@ -51,7 +52,7 @@ namespace KutuphaneCodeFirst.MockData
                 });
             }
 
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 25; i++)
             {
                 Calisanlar.Add(new Calisan()
                 {
