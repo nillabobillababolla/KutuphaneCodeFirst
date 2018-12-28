@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+// ReSharper disable ClassNeverInstantiated.Global
 
 namespace KutuphaneCodeFirst.Entities
 {
@@ -10,9 +11,15 @@ namespace KutuphaneCodeFirst.Entities
         public int KitapId { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "Kitap adi en fazla 100 karakter olabilir.")]
+        [StringLength(50, ErrorMessage = "Kitap adi en fazla 50 karakter olabilir.")]
         public string KitapAdi { get; set; }
+
+        [Required]
+        [StringLength(50,ErrorMessage = "Kategori adi en fazla 50 karakter olabilir.")]
+        public string Kategori { get; set; }
+
         public int YazarId { get; set; }
+
         [ForeignKey("YazarId")]
         public Yazar Yazar { get; set; }
     }

@@ -1,16 +1,22 @@
-﻿namespace KutuphaneCodeFirst.Entities
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+
+namespace KutuphaneCodeFirst.Entities
 {
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
+    
 
     [Table("Yazarlar")]
    public class Yazar
     {
         [Key]
         public int YazarId { get; set; }
-        [StringLength(100, ErrorMessage = "Yazarin adi 100 karakterden fazla olamaz.")]
+
+        [Required]
+        [StringLength(50, ErrorMessage = "Yazarin adi en fazla 50 karakter olabilir.")]
         public string YazarAd { get; set; }
-        [StringLength(100, ErrorMessage = "Yazarin soyadi 100 karakterden fazla olamaz.")]
+
+        [Required]
+        [StringLength(50, ErrorMessage = "Yazarin soyadi en fazla 50 karakter olabilir.")]
         public string YazarSoyad { get; set; }
     }
 }
