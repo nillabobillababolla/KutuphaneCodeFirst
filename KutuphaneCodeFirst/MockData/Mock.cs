@@ -1,4 +1,5 @@
-﻿namespace KutuphaneCodeFirst.MockData
+﻿// ReSharper disable EmptyConstructor
+namespace KutuphaneCodeFirst.MockData
 {
     public class Mock
     {

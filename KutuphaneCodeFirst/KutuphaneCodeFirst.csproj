@@ -56,6 +56,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Calisan.cs" />
+    <Compile Include="Entities\Kiralayan.cs" />
     <Compile Include="Entities\Kitap.cs" />
     <Compile Include="Entities\Yazar.cs" />
     <Compile Include="Form1.cs">
@@ -64,21 +66,9 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201812280616059_A4.cs" />
-    <Compile Include="Migrations\201812280616059_A4.Designer.cs">
-      <DependentUpon>201812280616059_A4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812280633261_A5.cs" />
-    <Compile Include="Migrations\201812280633261_A5.Designer.cs">
-      <DependentUpon>201812280633261_A5.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812280653264_A6.cs" />
-    <Compile Include="Migrations\201812280653264_A6.Designer.cs">
-      <DependentUpon>201812280653264_A6.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812280743132_A7.cs" />
-    <Compile Include="Migrations\201812280743132_A7.Designer.cs">
-      <DependentUpon>201812280743132_A7.cs</DependentUpon>
+    <Compile Include="Migrations\201812280810117_A9.cs" />
+    <Compile Include="Migrations\201812280810117_A9.Designer.cs">
+      <DependentUpon>201812280810117_A9.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MockData\Mock.cs" />
@@ -88,17 +78,8 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812280616059_A4.resx">
-      <DependentUpon>201812280616059_A4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812280633261_A5.resx">
-      <DependentUpon>201812280633261_A5.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812280653264_A6.resx">
-      <DependentUpon>201812280653264_A6.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812280743132_A7.resx">
-      <DependentUpon>201812280743132_A7.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201812280810117_A9.resx">
+      <DependentUpon>201812280810117_A9.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
