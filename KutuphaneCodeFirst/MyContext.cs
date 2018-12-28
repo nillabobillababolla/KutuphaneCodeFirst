@@ -14,7 +14,6 @@ namespace KutuphaneCodeFirst
         public virtual DbSet<Calisan> Calisanlar { get; set; }
         public virtual DbSet<Kiralayan> Kiralayanlar { get; set; }
         public virtual DbSet<Kira> Kiralar { get; set; }
-
     }
     
 }
