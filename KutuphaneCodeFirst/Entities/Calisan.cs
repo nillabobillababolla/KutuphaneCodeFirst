@@ -8,12 +8,7 @@ namespace KutuphaneCodeFirst.Entities
     {
         [Key]
         public int CalisanId { get; set; }
-
-        [StringLength(11,ErrorMessage = "Tckn 11 haneli olmalidir.")]
-        [Index("IX_Tckn",IsUnique = true)]
-        [Required]
-        public string Tckn { get; set; }
-
+        
         [Required]
         [StringLength(50, ErrorMessage = "Calisan adi en fazla 50 karakter olabilir.")]
         public string CalisanAd { get; set; }
@@ -26,5 +21,8 @@ namespace KutuphaneCodeFirst.Entities
         public string Gorev { get; set; }
 
         public decimal Maas { get; set; }
+
+        public override string ToString() => $"{CalisanAd} {CalisanSoyad}";
+
     }
 }

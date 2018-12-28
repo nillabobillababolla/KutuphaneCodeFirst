@@ -28,43 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.lstKitaplar = new System.Windows.Forms.ListBox();
+            this.lstYazarlar = new System.Windows.Forms.ListBox();
+            this.lstCalisanlar = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
-            // listBox1
+            // lstKitaplar
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(12, 93);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(286, 342);
-            this.listBox1.TabIndex = 0;
+            this.lstKitaplar.FormattingEnabled = true;
+            this.lstKitaplar.Location = new System.Drawing.Point(12, 93);
+            this.lstKitaplar.Name = "lstKitaplar";
+            this.lstKitaplar.Size = new System.Drawing.Size(626, 342);
+            this.lstKitaplar.TabIndex = 0;
             // 
-            // listBox2
+            // lstYazarlar
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(345, 93);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(286, 342);
-            this.listBox2.TabIndex = 0;
+            this.lstYazarlar.FormattingEnabled = true;
+            this.lstYazarlar.Location = new System.Drawing.Point(644, 93);
+            this.lstYazarlar.Name = "lstYazarlar";
+            this.lstYazarlar.Size = new System.Drawing.Size(154, 342);
+            this.lstYazarlar.TabIndex = 0;
             // 
-            // listBox3
+            // lstCalisanlar
             // 
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.Location = new System.Drawing.Point(678, 93);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(286, 342);
-            this.listBox3.TabIndex = 0;
+            this.lstCalisanlar.FormattingEnabled = true;
+            this.lstCalisanlar.Location = new System.Drawing.Point(804, 93);
+            this.lstCalisanlar.Name = "lstCalisanlar";
+            this.lstCalisanlar.Size = new System.Drawing.Size(160, 342);
+            this.lstCalisanlar.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(977, 450);
-            this.Controls.Add(this.listBox3);
-            this.Controls.Add(this.listBox2);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.lstCalisanlar);
+            this.Controls.Add(this.lstYazarlar);
+            this.Controls.Add(this.lstKitaplar);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kutuphane Otomasyon";
@@ -75,9 +75,9 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.ListBox listBox3;
+        private System.Windows.Forms.ListBox lstKitaplar;
+        private System.Windows.Forms.ListBox lstYazarlar;
+        private System.Windows.Forms.ListBox lstCalisanlar;
     }
 }
 

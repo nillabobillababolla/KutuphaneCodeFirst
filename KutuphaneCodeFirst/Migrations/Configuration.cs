@@ -15,10 +15,9 @@ namespace KutuphaneCodeFirst.Migrations
 
         protected override void Seed(MyContext context)
         {
-            var mockData = new Mock();
             if (!context.Yazarlar.Any())
             {
-                foreach (var item in mockData.Yazarlar)
+                foreach (var item in Mock.Yazarlar)
                 {
                     context.Yazarlar.Add(item);
                 }
@@ -31,7 +30,7 @@ namespace KutuphaneCodeFirst.Migrations
                 var yazarlar = context.Yazarlar.ToList();
                 Random rnd = new Random();
 
-                foreach (var item in mockData.Kitaplar)
+                foreach (var item in Mock.Kitaplar)
                 {
                     item.YazarId = yazarlar[rnd.Next(0, yazarlar.Count)].YazarId;
                     context.Kitaplar.Add(item);
@@ -43,9 +42,20 @@ namespace KutuphaneCodeFirst.Migrations
             if (!context.Kiralayanlar.Any())
             {
                 var kiralayanlar = context.Kiralayanlar.ToList();
-                Random rnd = new Random();
 
-                foreach (var item in mockData.Kiralayanlar)
+                foreach (var item in Mock.Kiralayanlar)
+                {
+                    context.Kiralayanlar.Add(item);
+                }
+                context.SaveChanges();
+            }
+
+
+            if (!context.Calisanlar.Any())
+            {
+                var kiralayanlar = context.Kiralayanlar.ToList();
+
+                foreach (var item in Mock.Kiralayanlar)
                 {
                     context.Kiralayanlar.Add(item);
                 }

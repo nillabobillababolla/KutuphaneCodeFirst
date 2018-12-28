@@ -10,10 +10,10 @@ namespace KutuphaneCodeFirst.Entities
         [Key]
         public int KiralayanId { get; set; }
 
-        [StringLength(11, ErrorMessage = "Tckn 11 haneli olmalidir.")]
-        [Index("IX_Tckn", IsUnique = true)]
-        [Required]
-        public string Tckn { get; set; }
+        //[StringLength(11, ErrorMessage = "Tckn 11 haneli olmalidir.")]
+        //[Index("IX_Tckn", IsUnique = true)]
+        //[Required]
+        //public string Tckn { get; set; }
 
         [StringLength(50,ErrorMessage = "Ad en fazla 50 karakter olabilir.")]
         public string KiralayanAd { get; set; }
@@ -26,5 +26,7 @@ namespace KutuphaneCodeFirst.Entities
         public string Adres { get; set; }
 
         public DateTime KayıtTarihi { get; set; } = DateTime.Now;
+
+        public override string ToString() => $"{KiralayanAd} {KiralayanSoyad}";
     }
 }

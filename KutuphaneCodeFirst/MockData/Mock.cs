@@ -1,22 +1,25 @@
 ﻿// ReSharper disable EmptyConstructor
 
-using System.Collections.Generic;
 using KutuphaneCodeFirst.Entities;
+using System.Collections.Generic;
 
 namespace KutuphaneCodeFirst.MockData
 {
-    public class Mock
+    public static class Mock
     {
-        public List<Yazar> Yazarlar { get; set; }
-        public List<Kitap> Kitaplar { get; set; }
-        public List<Kiralayan> Kiralayanlar { get; set; }
+        public static List<Yazar> Yazarlar { get; set; }
+        public static List<Kitap> Kitaplar { get; set; }
+        public static List<Kiralayan> Kiralayanlar { get; set; }
+        public static List<Calisan> Calisanlar { get; set; }
 
-
-        public Mock()
+    
+       static Mock()
         {
-            Yazarlar=new List<Yazar>();
-            Kitaplar =new  List<Kitap>();
-           
+            Yazarlar = new List<Yazar>();
+            Kitaplar = new List<Kitap>();
+            Kiralayanlar = new List<Kiralayan>();
+            Calisanlar = new List<Calisan>();
+
             for (int i = 0; i < 100; i++)
             {
                 Yazarlar.Add(new Yazar()
@@ -28,14 +31,15 @@ namespace KutuphaneCodeFirst.MockData
 
             for (int i = 0; i < 100; i++)
             {
+                var kat = FakeData.TextData.GetSentence();
+                var ad = FakeData.NameData.GetCompanyName();
                 Kitaplar.Add(new Kitap()
                 {
-                    KitapAdi = FakeData.NameData.GetCompanyName(),
+                    KitapAdi = ad.Length > 50 ? ad.Substring(0, 10) : ad,
                     Adet = FakeData.NumberData.GetNumber(10),
-                    Kategori = FakeData.TextData.GetSentence()
+                    Kategori = kat.Length > 50 ? kat.Substring(0, 50) : kat
                 });
             }
-
 
             for (int i = 0; i < 100; i++)
             {
@@ -43,11 +47,20 @@ namespace KutuphaneCodeFirst.MockData
                 {
                     KiralayanAd = FakeData.NameData.GetFirstName(),
                     KiralayanSoyad = FakeData.NameData.GetSurname(),
-                    Adres = FakeData.TextData.GetAlphabetical(30),
+                    Adres = FakeData.TextData.GetAlphabetical(30)
                 });
             }
 
-
+            for (int i = 0; i < 100; i++)
+            {
+                Calisanlar.Add(new Calisan()
+                {
+                    CalisanAd = FakeData.NameData.GetFirstName(),
+                    CalisanSoyad = FakeData.NameData.GetSurname(),
+                    Gorev = FakeData.TextData.GetAlphabetical(10),
+                    Maas = FakeData.NumberData.GetNumber(1000, 10000)
+                });
+            }
         }
     }
 }

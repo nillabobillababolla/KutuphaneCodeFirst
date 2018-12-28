@@ -21,5 +21,7 @@ namespace KutuphaneCodeFirst.Entities
 
         
         public virtual ICollection<Kitap> Kitaplar { get; set; } = new HashSet<Kitap>();
+
+        public override string ToString() => $"{YazarAd} {YazarSoyad}";
     }
 }

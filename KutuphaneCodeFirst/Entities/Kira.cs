@@ -15,13 +15,14 @@ namespace KutuphaneCodeFirst.Entities
 
         [Required]
         public int KiralayanId { get; set; }
-        
-        public DateTime KiralamaTarihi { get; set; } = DateTime.Now;
-        
-        [ForeignKey("KitapId")]
-        public Kitap Kitap { get; set; }
+
+        public DateTime KiralamaTarihi { get; set; }
 
         [ForeignKey("KiralayanId")]
-        public Kiralayan Kiralayan { get; set; }
+        public virtual Kiralayan Kiralayan { get; set; }
+
+        [ForeignKey("KitapId")]
+        public virtual Kitap Kitap { get; set; }
+
     }
 }
