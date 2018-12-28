@@ -39,6 +39,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="FakeData, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FakeData.1.0.0\lib\FakeData.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -73,7 +76,12 @@
     <Compile Include="Migrations\201812280653264_A6.Designer.cs">
       <DependentUpon>201812280653264_A6.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812280743132_A7.cs" />
+    <Compile Include="Migrations\201812280743132_A7.Designer.cs">
+      <DependentUpon>201812280743132_A7.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="MockData\Mock.cs" />
     <Compile Include="MyContext.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -88,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812280653264_A6.resx">
       <DependentUpon>201812280653264_A6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812280743132_A7.resx">
+      <DependentUpon>201812280743132_A7.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
