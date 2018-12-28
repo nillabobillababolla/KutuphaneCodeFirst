@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Calisan.cs" />
+    <Compile Include="Entities\Kira.cs" />
     <Compile Include="Entities\Kiralayan.cs" />
     <Compile Include="Entities\Kitap.cs" />
     <Compile Include="Entities\Yazar.cs" />
@@ -66,13 +67,9 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201812280810117_A9.cs" />
-    <Compile Include="Migrations\201812280810117_A9.Designer.cs">
-      <DependentUpon>201812280810117_A9.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812280813288_A10.cs" />
-    <Compile Include="Migrations\201812280813288_A10.Designer.cs">
-      <DependentUpon>201812280813288_A10.cs</DependentUpon>
+    <Compile Include="Migrations\201812280829117_A14.cs" />
+    <Compile Include="Migrations\201812280829117_A14.Designer.cs">
+      <DependentUpon>201812280829117_A14.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MockData\Mock.cs" />
@@ -82,11 +79,8 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812280810117_A9.resx">
-      <DependentUpon>201812280810117_A9.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812280813288_A10.resx">
-      <DependentUpon>201812280813288_A10.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201812280829117_A14.resx">
+      <DependentUpon>201812280829117_A14.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

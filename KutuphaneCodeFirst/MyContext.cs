@@ -13,6 +13,7 @@ namespace KutuphaneCodeFirst
         public virtual DbSet<Yazar> Yazarlar { get; set; }
         public virtual DbSet<Calisan> Calisanlar { get; set; }
         public virtual DbSet<Kiralayan> Kiralayanlar { get; set; }
+        public virtual DbSet<Kira> Kiralar { get; set; }
 
     }
     

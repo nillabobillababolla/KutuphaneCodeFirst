@@ -18,6 +18,9 @@ namespace KutuphaneCodeFirst.Entities
         [StringLength(50,ErrorMessage = "Kategori adi en fazla 50 karakter olabilir.")]
         public string Kategori { get; set; }
 
+        [Required]
+        public int Adet { get; set; }
+
         public int YazarId { get; set; }
 
         [ForeignKey("YazarId")]
