@@ -53,11 +53,11 @@ namespace KutuphaneCodeFirst.Migrations
 
             if (!context.Calisanlar.Any())
             {
-                var kiralayanlar = context.Kiralayanlar.ToList();
+                var calisanlar = context.Calisanlar.ToList();
 
-                foreach (var item in Mock.Kiralayanlar)
+                foreach (var item in Mock.Calisanlar)
                 {
-                    context.Kiralayanlar.Add(item);
+                    context.Calisanlar.Add(item);
                 }
                 context.SaveChanges();
             }

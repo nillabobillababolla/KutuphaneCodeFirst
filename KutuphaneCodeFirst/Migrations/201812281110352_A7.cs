@@ -1,8 +1,9 @@
 namespace KutuphaneCodeFirst.Migrations
 {
+    using System;
     using System.Data.Entity.Migrations;
-
-    public partial class A6 : DbMigration
+    
+    public partial class A7 : DbMigration
     {
         public override void Up()
         {
