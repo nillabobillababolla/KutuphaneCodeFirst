@@ -18,6 +18,9 @@ namespace KutuphaneCodeFirst.Entities
         [StringLength(50,ErrorMessage = "Ad en fazla 50 karakter olabilir.")]
         public string KiralayanAd { get; set; }
 
+        [StringLength(50, ErrorMessage = "Soyad en fazla 50 karakter olabilir.")]
+        public string KiralayanSoyad { get; set; }
+
 
         [StringLength(200,ErrorMessage = "Adres en fazla 200 karakter olabilir.")]
         public string Adres { get; set; }
