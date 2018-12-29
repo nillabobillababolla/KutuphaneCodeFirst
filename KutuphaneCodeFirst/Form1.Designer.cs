@@ -36,7 +36,7 @@
             // lstKitaplar
             // 
             this.lstKitaplar.FormattingEnabled = true;
-            this.lstKitaplar.Location = new System.Drawing.Point(12, 96);
+            this.lstKitaplar.Location = new System.Drawing.Point(12, 51);
             this.lstKitaplar.Name = "lstKitaplar";
             this.lstKitaplar.Size = new System.Drawing.Size(272, 342);
             this.lstKitaplar.TabIndex = 0;
@@ -44,7 +44,7 @@
             // lstYazarlar
             // 
             this.lstYazarlar.FormattingEnabled = true;
-            this.lstYazarlar.Location = new System.Drawing.Point(352, 96);
+            this.lstYazarlar.Location = new System.Drawing.Point(351, 51);
             this.lstYazarlar.Name = "lstYazarlar";
             this.lstYazarlar.Size = new System.Drawing.Size(272, 342);
             this.lstYazarlar.TabIndex = 0;
@@ -52,7 +52,7 @@
             // lstCalisanlar
             // 
             this.lstCalisanlar.FormattingEnabled = true;
-            this.lstCalisanlar.Location = new System.Drawing.Point(692, 96);
+            this.lstCalisanlar.Location = new System.Drawing.Point(693, 51);
             this.lstCalisanlar.Name = "lstCalisanlar";
             this.lstCalisanlar.Size = new System.Drawing.Size(272, 342);
             this.lstCalisanlar.TabIndex = 0;
