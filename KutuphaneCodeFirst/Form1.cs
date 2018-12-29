@@ -16,55 +16,69 @@ namespace KutuphaneCodeFirst
         
         private void Form1_Load(object sender, System.EventArgs e)
         {
-            KitaplariGetir();
-            YazarlariGetir();
-            CalisanlariGetir();
-            KiralayanlariGetir();
+            //KitaplariGetir();
+            //YazarlariGetir();
+            //CalisanlariGetir();
+            //KiralayanlariGetir();
         }
-
-        private void KiralayanlariGetir()
+        private KitapIslemleri _frmKitapIslemleri;
+        private void kitapİslemleriToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
-            lstKiralayanlar.DataSource = (from o in Mock.Kiralayanlar
-                orderby o.KiralayanAd
-                select o)
-                .ToList();
-        }
-
-        private void KitaplariGetir()
-        {
-            var db = new MyContext();
-            var kitaplar = new List<KitapViewModel>();
-            foreach (var model in db.Kitaplar.OrderBy(x => x.KitapAdi)
-                .Select(x => new KitapViewModel()
+            if (_frmKitapIslemleri == null || _frmKitapIslemleri.IsDisposed)
+            {
+                _frmKitapIslemleri = new KitapIslemleri
                 {
-                    KitapId = x.KitapId,
-                    YazarId = x.YazarId,
-                    Kategori = x.Kategori,
-                    KitapAdi = x.KitapAdi,
-                    YazarAdi = x.Yazar.YazarAd,
-                    YazarSoyadi = x.Yazar.YazarSoyad,
-                    Adet = x.Adet
-                }))
-                kitaplar.Add(model);
-
-            lstKitaplar.DataSource = kitaplar;
+                    MdiParent = this
+                };
+                _frmKitapIslemleri.Show();
+            }
         }
 
-        private void CalisanlariGetir()
-        {
-            lstCalisanlar.DataSource = (from o in Mock.Calisanlar
-                    orderby o.CalisanAd
-                    select o)
-                .ToList();
-        }
 
-        private void YazarlariGetir()
-        {
-            lstYazarlar.DataSource = (from o in Mock.Yazarlar
-                    orderby o.YazarAd
-                    select o)
-                .ToList();
-        }
-        
+
+        //private void KiralayanlariGetir()
+        //{
+        //    lstKiralayanlar.DataSource = (from o in Mock.Kiralayanlar
+        //        orderby o.KiralayanAd
+        //        select o)
+        //        .ToList();
+        //}
+
+        //private void KitaplariGetir()
+        //{
+        //    var db = new MyContext();
+        //    var kitaplar = new List<KitapViewModel>();
+        //    foreach (var model in db.Kitaplar.OrderBy(x => x.KitapAdi)
+        //        .Select(x => new KitapViewModel()
+        //        {
+        //            KitapId = x.KitapId,
+        //            YazarId = x.YazarId,
+        //            Kategori = x.Kategori,
+        //            KitapAdi = x.KitapAdi,
+        //            YazarAdi = x.Yazar.YazarAd,
+        //            YazarSoyadi = x.Yazar.YazarSoyad,
+        //            Adet = x.Adet
+        //        }))
+        //        kitaplar.Add(model);
+
+        //    lstKitaplar.DataSource = kitaplar;
+        //}
+
+        //private void CalisanlariGetir()
+        //{
+        //    lstCalisanlar.DataSource = (from o in Mock.Calisanlar
+        //            orderby o.CalisanAd
+        //            select o)
+        //        .ToList();
+        //}
+
+        //private void YazarlariGetir()
+        //{
+        //    lstYazarlar.DataSource = (from o in Mock.Yazarlar
+        //            orderby o.YazarAd
+        //            select o)
+        //        .ToList();
+        //}
+
     }
 }

@@ -69,6 +69,12 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\EntityHelper.cs" />
+    <Compile Include="KitapIslemleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KitapIslemleri.Designer.cs">
+      <DependentUpon>KitapIslemleri.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\201812282200195_A1.cs" />
     <Compile Include="Migrations\201812282200195_A1.Designer.cs">
       <DependentUpon>201812282200195_A1.cs</DependentUpon>
@@ -89,6 +95,9 @@
     <Compile Include="ViewModels\KitapViewModel.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KitapIslemleri.resx">
+      <DependentUpon>KitapIslemleri.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812282200195_A1.resx">
       <DependentUpon>201812282200195_A1.cs</DependentUpon>

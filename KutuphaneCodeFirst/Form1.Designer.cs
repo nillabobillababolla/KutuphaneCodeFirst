@@ -28,87 +28,78 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.lstKitaplar = new System.Windows.Forms.ListBox();
-            this.lstYazarlar = new System.Windows.Forms.ListBox();
-            this.lstCalisanlar = new System.Windows.Forms.ListBox();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.lstKiralayanlar = new System.Windows.Forms.ListBox();
-            this.kitabıKiralaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuStrip1.SuspendLayout();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.kitapİslemleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.calisanİslemleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uyeİslemleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kiralamaİslemleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lstKitaplar
+            // menuStrip1
             // 
-            this.lstKitaplar.FormattingEnabled = true;
-            this.lstKitaplar.Location = new System.Drawing.Point(12, 38);
-            this.lstKitaplar.Name = "lstKitaplar";
-            this.lstKitaplar.Size = new System.Drawing.Size(229, 355);
-            this.lstKitaplar.TabIndex = 0;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.kitapİslemleriToolStripMenuItem,
+            this.calisanİslemleriToolStripMenuItem,
+            this.uyeİslemleriToolStripMenuItem,
+            this.kiralamaİslemleriToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(977, 24);
+            this.menuStrip1.TabIndex = 3;
+            this.menuStrip1.Text = "File";
             // 
-            // lstYazarlar
+            // kitapİslemleriToolStripMenuItem
             // 
-            this.lstYazarlar.FormattingEnabled = true;
-            this.lstYazarlar.Location = new System.Drawing.Point(276, 61);
-            this.lstYazarlar.Name = "lstYazarlar";
-            this.lstYazarlar.Size = new System.Drawing.Size(218, 342);
-            this.lstYazarlar.TabIndex = 0;
+            this.kitapİslemleriToolStripMenuItem.Name = "kitapİslemleriToolStripMenuItem";
+            this.kitapİslemleriToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
+            this.kitapİslemleriToolStripMenuItem.Text = "Kitapİslemleri";
+            this.kitapİslemleriToolStripMenuItem.Click += new System.EventHandler(this.kitapİslemleriToolStripMenuItem_Click);
             // 
-            // lstCalisanlar
+            // calisanİslemleriToolStripMenuItem
             // 
-            this.lstCalisanlar.FormattingEnabled = true;
-            this.lstCalisanlar.Location = new System.Drawing.Point(513, 61);
-            this.lstCalisanlar.Name = "lstCalisanlar";
-            this.lstCalisanlar.Size = new System.Drawing.Size(218, 342);
-            this.lstCalisanlar.TabIndex = 0;
+            this.calisanİslemleriToolStripMenuItem.Name = "calisanİslemleriToolStripMenuItem";
+            this.calisanİslemleriToolStripMenuItem.Size = new System.Drawing.Size(101, 20);
+            this.calisanİslemleriToolStripMenuItem.Text = "Calisanİslemleri";
             // 
-            // contextMenuStrip1
+            // uyeİslemleriToolStripMenuItem
             // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.kitabıKiralaToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 48);
+            this.uyeİslemleriToolStripMenuItem.Name = "uyeİslemleriToolStripMenuItem";
+            this.uyeİslemleriToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
+            this.uyeİslemleriToolStripMenuItem.Text = "Uyeİslemleri";
             // 
-            // lstKiralayanlar
+            // kiralamaİslemleriToolStripMenuItem
             // 
-            this.lstKiralayanlar.FormattingEnabled = true;
-            this.lstKiralayanlar.Location = new System.Drawing.Point(747, 61);
-            this.lstKiralayanlar.Name = "lstKiralayanlar";
-            this.lstKiralayanlar.Size = new System.Drawing.Size(218, 342);
-            this.lstKiralayanlar.TabIndex = 0;
-            // 
-            // kitabıKiralaToolStripMenuItem
-            // 
-            this.kitabıKiralaToolStripMenuItem.Name = "kitabıKiralaToolStripMenuItem";
-            this.kitabıKiralaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.kitabıKiralaToolStripMenuItem.Text = "Kitabı Kirala";
+            this.kiralamaİslemleriToolStripMenuItem.Name = "kiralamaİslemleriToolStripMenuItem";
+            this.kiralamaİslemleriToolStripMenuItem.Size = new System.Drawing.Size(109, 20);
+            this.kiralamaİslemleriToolStripMenuItem.Text = "Kiralamaİslemleri";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(977, 450);
-            this.Controls.Add(this.lstKiralayanlar);
-            this.Controls.Add(this.lstCalisanlar);
-            this.Controls.Add(this.lstYazarlar);
-            this.Controls.Add(this.lstKitaplar);
+            this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kutuphane Otomasyon";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.contextMenuStrip1.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox lstKitaplar;
-        private System.Windows.Forms.ListBox lstYazarlar;
-        private System.Windows.Forms.ListBox lstCalisanlar;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ListBox lstKiralayanlar;
-        private System.Windows.Forms.ToolStripMenuItem kitabıKiralaToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem kitapİslemleriToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem calisanİslemleriToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem uyeİslemleriToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem kiralamaİslemleriToolStripMenuItem;
     }
 }
 
