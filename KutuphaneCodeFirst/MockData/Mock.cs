@@ -2,6 +2,9 @@
 
 using KutuphaneCodeFirst.Entities;
 using System.Collections.Generic;
+using System.Linq;
+using KutuphaneCodeFirst.Helpers;
+using KutuphaneCodeFirst.ViewModels;
 
 namespace KutuphaneCodeFirst.MockData
 {
@@ -11,6 +14,7 @@ namespace KutuphaneCodeFirst.MockData
         public static List<Kitap> Kitaplar { get; set; }
         public static List<Kiralayan> Kiralayanlar { get; set; }
         public static List<Calisan> Calisanlar { get; set; }
+        public static List<KitapViewModel> KitapViewModels { get; set; }
 
         static Mock()
         {
@@ -18,6 +22,9 @@ namespace KutuphaneCodeFirst.MockData
             Kitaplar = new List<Kitap>();
             Kiralayanlar = new List<Kiralayan>();
             Calisanlar = new List<Calisan>();
+            KitapViewModels = new List<KitapViewModel>();
+
+            KitapViewModels = ListeHelper.KitaplariGetir();
 
             for (int i = 0; i < 25; i++)
             {

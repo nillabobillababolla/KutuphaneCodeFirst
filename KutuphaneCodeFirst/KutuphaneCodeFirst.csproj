@@ -75,6 +75,8 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\EntityHelper.cs" />
+    <Compile Include="Helpers\KitapHelper.cs" />
+    <Compile Include="Helpers\ListeHelper.cs" />
     <Compile Include="KiralamaIslemleri.cs">
       <SubType>Form</SubType>
     </Compile>

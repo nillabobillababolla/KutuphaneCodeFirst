@@ -1,24 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using KutuphaneCodeFirst.Entities;
+using KutuphaneCodeFirst.Helpers;
 using KutuphaneCodeFirst.MockData;
 using KutuphaneCodeFirst.ViewModels;
 
 namespace KutuphaneCodeFirst
-{ 
+{
     public partial class KitapIslemleri : Form
     { 
         public KitapIslemleri()
         {
             InitializeComponent();
         }
-        KitapViewModel seciliKitap = new KitapViewModel();
+
+            KitapViewModel seciliKitap = new KitapViewModel();
+            Yazar seciliYazar = new Yazar();
 
         private void KitapIslemleri_Load(object sender, EventArgs e)
         {
-            lstKitaplar.DataSource = Form1.KitaplariGetir();
+            lstKitaplar.DataSource = Mock.KitapViewModels;
             cmbYazar.DataSource = Mock.Yazarlar;
         }
 
@@ -29,17 +31,30 @@ namespace KutuphaneCodeFirst
 
         private void lstKitaplar_SelectedIndexChanged(object sender, EventArgs e)
         {
-           seciliKitap = (KitapViewModel)lstKitaplar.SelectedItem;
-           var seciliYazar = (from o in Mock.Yazarlar
-                           where seciliKitap.YazarId == o.YazarId
-                            select o) as Yazar;
+            //seciliKitap = (KitapViewModel)lstKitaplar.SelectedItem;
+            //seciliYazar = (from o in Mock.Kitaplar
+            //             where o.YazarId == seciliKitap.YazarId
+            //             select o.Yazar) as Yazar;
+            //txtKitapAdi.Text = seciliKitap.KitapAdi;
+            //txtKategori.Text = seciliKitap.Kategori;
+            //cmbYazar.SelectedItem = seciliYazar;
+            //nuAdet.Value = seciliKitap.Adet;
+        }
 
-
-
-            txtKitapAdi.Text = seciliKitap.KitapAdi;
-            txtKategori.Text = seciliKitap.Kategori;
-            cmbYazar.SelectedItem = seciliYazar;
-            nuAdet.Value = seciliKitap.Adet;
+        private void btnKitapKaydet_Click(object sender, EventArgs e)
+        {
+            var yazar = cmbYazar.SelectedItem as Yazar;
+            if (yazar == null) return;
+           
+            var kitap = new Kitap
+            {
+                KitapAdi = txtKitapAdi.Text,
+                Adet = Int32.Parse(txtAdet.Text),
+                Kategori = txtKategori.Text,
+                YazarId = yazar.YazarId,
+            };
+           var adet = KitapHelper.KitapEkle(kitap);
+           MessageBox.Show($@"{adet} adet Kitap eklendi.");
         }
     }
 }

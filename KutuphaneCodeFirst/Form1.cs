@@ -32,7 +32,9 @@ namespace KutuphaneCodeFirst
                 {
                     MdiParent = this
                 };
+                _frmKitapIslemleri.WindowState = FormWindowState.Maximized;
                 _frmKitapIslemleri.Show();
+                
             }
         }
 
@@ -44,6 +46,7 @@ namespace KutuphaneCodeFirst
                 {
                     MdiParent = this
                 };
+                _frmCalisanIslemleri.WindowState = FormWindowState.Maximized;
                 _frmCalisanIslemleri.Show();
             }
         }
@@ -56,6 +59,7 @@ namespace KutuphaneCodeFirst
                 {
                     MdiParent = this
                 };
+                _frmUyeIslemleri.WindowState = FormWindowState.Maximized;
                 _frmUyeIslemleri.Show();
             }
         }
@@ -68,6 +72,7 @@ namespace KutuphaneCodeFirst
                 {
                     MdiParent = this
                 };
+                _frmKiralamaIslemleri.WindowState = FormWindowState.Maximized;
                 _frmKiralamaIslemleri.Show();
             }
         }
@@ -80,57 +85,10 @@ namespace KutuphaneCodeFirst
                 {
                     MdiParent = this
                 };
+                _frmYazarIslemleri.WindowState = FormWindowState.Maximized;
                 _frmYazarIslemleri.Show();
             }
         }
-
-
-
-        public static List<Kiralayan> KiralayanlariGetir()
-        {
-            var kiralayanlar = (from o in Mock.Kiralayanlar
-                                          orderby o.KiralayanAd
-                                          select o)
-                .ToList();
-            return kiralayanlar;
-        }
-
-        public static List<KitapViewModel> KitaplariGetir()
-        {
-            var db = new MyContext();
-            var kitaplar = new List<KitapViewModel>();
-            foreach (var model in db.Kitaplar.OrderBy(x => x.KitapAdi)
-                .Select(x => new KitapViewModel()
-                {
-                    KitapId = x.KitapId,
-                    YazarId = x.YazarId,
-                    Kategori = x.Kategori,
-                    KitapAdi = x.KitapAdi,
-                    YazarAdi = x.Yazar.YazarAd,
-                    YazarSoyadi = x.Yazar.YazarSoyad,
-                    Adet = x.Adet
-                }))
-                kitaplar.Add(model);
-            return kitaplar;
-        }
-
-        public static List<Calisan> CalisanlariGetir()
-        {
-            var calisanlar = (from o in Mock.Calisanlar
-                                        orderby o.CalisanAd
-                                        select o)
-                .ToList();
-            return calisanlar;
-        }
-
-        public static List<Yazar> YazarlariGetir()
-        {
-            var yazarlar = (from o in Mock.Yazarlar
-                                      orderby o.YazarAd
-                                      select o)
-                .ToList();
-            return yazarlar;
-        }
-
+        
     }
 }
