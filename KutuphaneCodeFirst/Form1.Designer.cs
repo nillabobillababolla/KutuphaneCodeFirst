@@ -33,6 +33,7 @@
             this.calisanİslemleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uyeİslemleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kiralamaİslemleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.yazarİslemleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,7 +43,8 @@
             this.kitapİslemleriToolStripMenuItem,
             this.calisanİslemleriToolStripMenuItem,
             this.uyeİslemleriToolStripMenuItem,
-            this.kiralamaİslemleriToolStripMenuItem});
+            this.kiralamaİslemleriToolStripMenuItem,
+            this.yazarİslemleriToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(977, 24);
@@ -61,18 +63,28 @@
             this.calisanİslemleriToolStripMenuItem.Name = "calisanİslemleriToolStripMenuItem";
             this.calisanİslemleriToolStripMenuItem.Size = new System.Drawing.Size(101, 20);
             this.calisanİslemleriToolStripMenuItem.Text = "Calisanİslemleri";
+            this.calisanİslemleriToolStripMenuItem.Click += new System.EventHandler(this.calisanİslemleriToolStripMenuItem_Click);
             // 
             // uyeİslemleriToolStripMenuItem
             // 
             this.uyeİslemleriToolStripMenuItem.Name = "uyeİslemleriToolStripMenuItem";
             this.uyeİslemleriToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
             this.uyeİslemleriToolStripMenuItem.Text = "Uyeİslemleri";
+            this.uyeİslemleriToolStripMenuItem.Click += new System.EventHandler(this.uyeİslemleriToolStripMenuItem_Click);
             // 
             // kiralamaİslemleriToolStripMenuItem
             // 
             this.kiralamaİslemleriToolStripMenuItem.Name = "kiralamaİslemleriToolStripMenuItem";
             this.kiralamaİslemleriToolStripMenuItem.Size = new System.Drawing.Size(109, 20);
             this.kiralamaİslemleriToolStripMenuItem.Text = "Kiralamaİslemleri";
+            this.kiralamaİslemleriToolStripMenuItem.Click += new System.EventHandler(this.kiralamaİslemleriToolStripMenuItem_Click);
+            // 
+            // yazarİslemleriToolStripMenuItem
+            // 
+            this.yazarİslemleriToolStripMenuItem.Name = "yazarİslemleriToolStripMenuItem";
+            this.yazarİslemleriToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
+            this.yazarİslemleriToolStripMenuItem.Text = "Yazarİslemleri";
+            this.yazarİslemleriToolStripMenuItem.Click += new System.EventHandler(this.yazarİslemleriToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -100,6 +112,7 @@
         private System.Windows.Forms.ToolStripMenuItem calisanİslemleriToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem uyeİslemleriToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kiralamaİslemleriToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem yazarİslemleriToolStripMenuItem;
     }
 }
 

@@ -2,8 +2,6 @@
 
 using KutuphaneCodeFirst.Entities;
 using System.Collections.Generic;
-using System.Linq;
-using KutuphaneCodeFirst.ViewModels;
 
 namespace KutuphaneCodeFirst.MockData
 {
@@ -37,7 +35,7 @@ namespace KutuphaneCodeFirst.MockData
                 Kitaplar.Add(new Kitap()
                 {
                     KitapAdi = ad.Length > 50 ? ad.Substring(0, 10) : ad,
-                    Adet = FakeData.NumberData.GetNumber(10),
+                    Adet = FakeData.NumberData.GetNumber(1,10),
                     Kategori = kat.Length > 50 ? kat.Substring(0, 50) : kat
                 });
             }
