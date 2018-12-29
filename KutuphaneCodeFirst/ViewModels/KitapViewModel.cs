@@ -8,6 +8,8 @@
         public string YazarAdi { get; set; }
         public string YazarSoyadi { get; set; }
         public string Kategori { get; set; }
-        public override string ToString() => $"{KitapAdi}-/{YazarAdi} {YazarSoyadi}-/{Kategori}";
+        public int Adet { get; set; }
+
+        public override string ToString() => $"{KitapAdi}/-/{YazarAdi} {YazarSoyadi}/-/{Kategori},{Adet}";
     }
 }

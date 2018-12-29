@@ -3,6 +3,7 @@ using System.Linq;
 using System.Windows.Forms;
 using KutuphaneCodeFirst.MockData;
 using KutuphaneCodeFirst.ViewModels;
+// ReSharper disable TooManyDeclarations
 
 namespace KutuphaneCodeFirst
 {
@@ -18,7 +19,17 @@ namespace KutuphaneCodeFirst
             KitaplariGetir();
             YazarlariGetir();
             CalisanlariGetir();
+            KiralayanlariGetir();
         }
+
+        private void KiralayanlariGetir()
+        {
+            lstKiralayanlar.DataSource = (from o in Mock.Kiralayanlar
+                orderby o.KiralayanAd
+                select o)
+                .ToList();
+        }
+
         private void KitaplariGetir()
         {
             var db = new MyContext();
@@ -32,6 +43,7 @@ namespace KutuphaneCodeFirst
                     KitapAdi = x.KitapAdi,
                     YazarAdi = x.Yazar.YazarAd,
                     YazarSoyadi = x.Yazar.YazarSoyad,
+                    Adet = x.Adet
                 }))
                 kitaplar.Add(model);
 
@@ -40,14 +52,19 @@ namespace KutuphaneCodeFirst
 
         private void CalisanlariGetir()
         {
-            lstCalisanlar.DataSource = Mock.Calisanlar;
+            lstCalisanlar.DataSource = (from o in Mock.Calisanlar
+                    orderby o.CalisanAd
+                    select o)
+                .ToList();
         }
 
         private void YazarlariGetir()
         {
-            lstYazarlar.DataSource = Mock.Yazarlar;
+            lstYazarlar.DataSource = (from o in Mock.Yazarlar
+                    orderby o.YazarAd
+                    select o)
+                .ToList();
         }
-
-       
+        
     }
 }
