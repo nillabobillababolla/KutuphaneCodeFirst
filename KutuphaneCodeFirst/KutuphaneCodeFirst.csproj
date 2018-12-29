@@ -101,6 +101,10 @@
     <Compile Include="Migrations\201812291042182_A5.Designer.cs">
       <DependentUpon>201812291042182_A5.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812292200327_KitapHelper.cs" />
+    <Compile Include="Migrations\201812292200327_KitapHelper.Designer.cs">
+      <DependentUpon>201812292200327_KitapHelper.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MockData\Mock.cs" />
     <Compile Include="MyContext.cs" />
@@ -139,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812291042182_A5.resx">
       <DependentUpon>201812291042182_A5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812292200327_KitapHelper.resx">
+      <DependentUpon>201812292200327_KitapHelper.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
