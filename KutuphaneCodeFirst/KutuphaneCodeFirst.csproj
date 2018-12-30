@@ -124,6 +124,10 @@
     <Compile Include="Migrations\201812301017040_A335.Designer.cs">
       <DependentUpon>201812301017040_A335.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812301900194_A223.cs" />
+    <Compile Include="Migrations\201812301900194_A223.Designer.cs">
+      <DependentUpon>201812301900194_A223.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MockData\Mock.cs" />
     <Compile Include="MyContext.cs" />
@@ -180,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812301017040_A335.resx">
       <DependentUpon>201812301017040_A335.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812301900194_A223.resx">
+      <DependentUpon>201812301900194_A223.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
