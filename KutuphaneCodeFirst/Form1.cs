@@ -17,7 +17,15 @@ namespace KutuphaneCodeFirst
         
         private void Form1_Load(object sender, System.EventArgs e)
         {
-             
+            using (var db = new MyContext())
+            {
+                Mock.Kitaplar = db.Kitaplar.OrderBy(x => x.KitapAdi).ToList();
+                Mock.Yazarlar = db.Yazarlar.OrderBy(y => y.YazarAd).ThenBy(z => z.YazarSoyad).ToList();
+                Mock.Calisanlar = db.Calisanlar.OrderBy(t => t.CalisanAd).ThenBy(k => k.CalisanSoyad).ToList();
+                Mock.Kiralayanlar = db.Kiralayanlar.OrderBy(g => g.KiralayanAd).ThenBy(f => f.KiralayanSoyad).ToList();
+                Mock.Kiralar = db.Kiralar.OrderByDescending(c => c.KiralamaTarihi).ThenBy(a => a.KitapId)
+                    .ThenBy(v => v.KiralayanId).ToList();
+            }
         }
         private KitapIslemleri _frmKitapIslemleri;
         private CalisanIslemleri _frmCalisanIslemleri;

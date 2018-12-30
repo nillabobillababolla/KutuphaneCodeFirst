@@ -11,7 +11,7 @@ namespace KutuphaneCodeFirst.MockData
         public static List<Kitap> Kitaplar { get; set; }
         public static List<Kiralayan> Kiralayanlar { get; set; }
         public static List<Calisan> Calisanlar { get; set; }
-
+        public static List<Kira> Kiralar { get; set; }
         
         static Mock()
         {
@@ -19,6 +19,7 @@ namespace KutuphaneCodeFirst.MockData
             Kitaplar = new List<Kitap>();
             Kiralayanlar = new List<Kiralayan>();
             Calisanlar = new List<Calisan>();
+            Kiralar = new List<Kira>();
 
             for (int i = 0; i < 25; i++)
                 {
@@ -31,8 +32,8 @@ namespace KutuphaneCodeFirst.MockData
 
                 for (int i = 0; i < 25; i++)
                 {
-                    var kat = FakeData.TextData.GetAlphabetical(10);
-                    var ad = FakeData.TextData.GetAlphabetical(10);
+                    var kat = FakeData.TextData.GetAlphabetical(10).ToUpper();
+                    var ad = FakeData.TextData.GetAlphabetical(10).ToUpper();
                     Kitaplar.Add(new Kitap()
                     {
                         KitapAdi = ad.Length > 50 ? ad.Substring(0, 10) : ad,

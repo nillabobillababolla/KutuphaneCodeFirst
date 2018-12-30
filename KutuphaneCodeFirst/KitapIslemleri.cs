@@ -3,6 +3,7 @@ using KutuphaneCodeFirst.Helpers;
 using System;
 using System.Linq;
 using System.Windows.Forms;
+using KutuphaneCodeFirst.MockData;
 
 namespace KutuphaneCodeFirst
 {
@@ -15,11 +16,8 @@ namespace KutuphaneCodeFirst
        
         private void KitapIslemleri_Load(object sender, EventArgs e)
         {
-            using (var db = new MyContext())
-            {
-                lstKitaplar.DataSource = db.Kitaplar.OrderBy(x => x.KitapAdi).ToList();
-                cmbYazar.DataSource = db.Yazarlar.OrderBy(y=>y.YazarAd).ThenBy(z=>z.YazarSoyad).ToList();
-            }
+            cmbYazar.DataSource = Mock.Yazarlar;
+            lstKitaplar.DataSource = Mock.Kitaplar;
         }
 
         private void silToolStripMenuItem_Click(object sender, EventArgs e)
