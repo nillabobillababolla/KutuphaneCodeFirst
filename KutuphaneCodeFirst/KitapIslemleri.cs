@@ -1,27 +1,25 @@
-﻿using System;
+﻿using KutuphaneCodeFirst.Entities;
+using KutuphaneCodeFirst.Helpers;
+using System;
 using System.Linq;
 using System.Windows.Forms;
-using KutuphaneCodeFirst.Entities;
-using KutuphaneCodeFirst.Helpers;
-using KutuphaneCodeFirst.MockData;
-using KutuphaneCodeFirst.ViewModels;
 
 namespace KutuphaneCodeFirst
 {
     public partial class KitapIslemleri : Form
-    { 
+    {
         public KitapIslemleri()
         {
             InitializeComponent();
         }
-
-            KitapViewModel seciliKitap = new KitapViewModel();
-            Yazar seciliYazar = new Yazar();
-
+       
         private void KitapIslemleri_Load(object sender, EventArgs e)
         {
-            lstKitaplar.DataSource = Mock.KitapViewModels;
-            cmbYazar.DataSource = Mock.Yazarlar;
+            using (var db = new MyContext())
+            {
+                lstKitaplar.DataSource = db.Kitaplar.OrderBy(x => x.KitapAdi).ToList();
+                cmbYazar.DataSource = db.Yazarlar.OrderBy(y=>y.YazarAd).ThenBy(z=>z.YazarSoyad).ToList();
+            }
         }
 
         private void silToolStripMenuItem_Click(object sender, EventArgs e)
@@ -39,6 +37,8 @@ namespace KutuphaneCodeFirst
             //txtKategori.Text = seciliKitap.Kategori;
             //cmbYazar.SelectedItem = seciliYazar;
             //nuAdet.Value = seciliKitap.Adet;
+
+            
         }
 
         private void btnKitapKaydet_Click(object sender, EventArgs e)

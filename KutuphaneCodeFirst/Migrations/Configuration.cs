@@ -21,7 +21,6 @@ namespace KutuphaneCodeFirst.Migrations
                 {
                     context.Yazarlar.Add(item);
                 }
-
                 context.SaveChanges();
             }
 
@@ -35,14 +34,11 @@ namespace KutuphaneCodeFirst.Migrations
                     item.YazarId = yazarlar[rnd.Next(0, yazarlar.Count)].YazarId;
                     context.Kitaplar.Add(item);
                 }
-
                 context.SaveChanges();
             }
 
             if (!context.Kiralayanlar.Any())
             {
-                var kiralayanlar = context.Kiralayanlar.ToList();
-
                 foreach (var item in Mock.Kiralayanlar)
                 {
                     context.Kiralayanlar.Add(item);
@@ -53,8 +49,6 @@ namespace KutuphaneCodeFirst.Migrations
 
             if (!context.Calisanlar.Any())
             {
-                var calisanlar = context.Calisanlar.ToList();
-
                 foreach (var item in Mock.Calisanlar)
                 {
                     context.Calisanlar.Add(item);

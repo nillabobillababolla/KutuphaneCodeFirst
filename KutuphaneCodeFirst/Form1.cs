@@ -24,6 +24,7 @@ namespace KutuphaneCodeFirst
         private UyeIslemleri _frmUyeIslemleri;
         private KiralamaIslemleri _frmKiralamaIslemleri;
         private YazarIslemleri _frmYazarIslemleri;
+
         private void kitapİslemleriToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
             if (_frmKitapIslemleri == null || _frmKitapIslemleri.IsDisposed)
