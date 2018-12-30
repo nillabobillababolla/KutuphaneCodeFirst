@@ -69,7 +69,17 @@ namespace KutuphaneCodeFirst
                     MessageBox.Show(exception.Message);
                 }
             }
+        }
 
+        private void cmbKiralayanlar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //var db = new MyContext();
+            //var seciliKiralayan = (Kiralayan) cmbKiralayanlar.SelectedItem;
+            //var liste = db.Kiralar.Where(b => b.KiralayanId == seciliKiralayan.KiralayanId).ToList();
+            //foreach (var kira in liste)
+            //{
+            //    lstKitaplar.Items.Add(kira);
+            //}
         }
     }
 }

@@ -31,6 +31,8 @@
             this.lstKitaplar = new System.Windows.Forms.ListBox();
             this.cmbKiralayanlar = new System.Windows.Forms.ComboBox();
             this.btnKaydet = new System.Windows.Forms.Button();
+            this.lstUyeKitaplari = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lstKitaplar
@@ -48,6 +50,7 @@
             this.cmbKiralayanlar.Name = "cmbKiralayanlar";
             this.cmbKiralayanlar.Size = new System.Drawing.Size(437, 21);
             this.cmbKiralayanlar.TabIndex = 1;
+            this.cmbKiralayanlar.SelectedIndexChanged += new System.EventHandler(this.cmbKiralayanlar_SelectedIndexChanged);
             // 
             // btnKaydet
             // 
@@ -59,11 +62,30 @@
             this.btnKaydet.UseVisualStyleBackColor = true;
             this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
+            // lstUyeKitaplari
+            // 
+            this.lstUyeKitaplari.FormattingEnabled = true;
+            this.lstUyeKitaplari.Location = new System.Drawing.Point(12, 343);
+            this.lstUyeKitaplari.Name = "lstUyeKitaplari";
+            this.lstUyeKitaplari.Size = new System.Drawing.Size(437, 95);
+            this.lstUyeKitaplari.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 318);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(183, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Seçili Üyenin Elinde Bulunan Kitaplar:";
+            // 
             // KiralamaIslemleri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lstUyeKitaplari);
             this.Controls.Add(this.btnKaydet);
             this.Controls.Add(this.cmbKiralayanlar);
             this.Controls.Add(this.lstKitaplar);
@@ -72,6 +94,7 @@
             this.Text = "KiralamaIslemleri";
             this.Load += new System.EventHandler(this.KiralamaIslemleri_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -80,5 +103,7 @@
         private System.Windows.Forms.ListBox lstKitaplar;
         private System.Windows.Forms.ComboBox cmbKiralayanlar;
         private System.Windows.Forms.Button btnKaydet;
+        private System.Windows.Forms.ListBox lstUyeKitaplari;
+        private System.Windows.Forms.Label label1;
     }
 }
