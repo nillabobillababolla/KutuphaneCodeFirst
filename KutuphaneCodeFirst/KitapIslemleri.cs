@@ -2,7 +2,6 @@
 using KutuphaneCodeFirst.Helpers;
 using KutuphaneCodeFirst.MockData;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -41,6 +40,7 @@ namespace KutuphaneCodeFirst
 
         private void btnKitapKaydet_Click(object sender, EventArgs e)
         {
+
             var db = new MyContext();
             using (var tran = db.Database.BeginTransaction())
             {
