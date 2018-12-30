@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtAdet = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,7 +42,6 @@
             this.lstKitaplar = new System.Windows.Forms.ListBox();
             this.cmsKitapSil = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.txtAdet = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.cmsKitapSil.SuspendLayout();
             this.SuspendLayout();
@@ -59,10 +59,17 @@
             this.groupBox1.Controls.Add(this.txtKitapAdi);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 177);
+            this.groupBox1.Size = new System.Drawing.Size(200, 173);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Kitap Ekleme";
+            // 
+            // txtAdet
+            // 
+            this.txtAdet.Location = new System.Drawing.Point(63, 111);
+            this.txtAdet.Name = "txtAdet";
+            this.txtAdet.Size = new System.Drawing.Size(121, 20);
+            this.txtAdet.TabIndex = 6;
             // 
             // label4
             // 
@@ -136,9 +143,9 @@
             // 
             this.lstKitaplar.ContextMenuStrip = this.cmsKitapSil;
             this.lstKitaplar.FormattingEnabled = true;
-            this.lstKitaplar.Location = new System.Drawing.Point(218, 18);
+            this.lstKitaplar.Location = new System.Drawing.Point(218, 12);
             this.lstKitaplar.Name = "lstKitaplar";
-            this.lstKitaplar.Size = new System.Drawing.Size(570, 134);
+            this.lstKitaplar.Size = new System.Drawing.Size(570, 173);
             this.lstKitaplar.TabIndex = 1;
             this.lstKitaplar.SelectedIndexChanged += new System.EventHandler(this.lstKitaplar_SelectedIndexChanged);
             // 
@@ -155,13 +162,6 @@
             this.silToolStripMenuItem.Size = new System.Drawing.Size(86, 22);
             this.silToolStripMenuItem.Text = "Sil";
             this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
-            // 
-            // txtAdet
-            // 
-            this.txtAdet.Location = new System.Drawing.Point(63, 111);
-            this.txtAdet.Name = "txtAdet";
-            this.txtAdet.Size = new System.Drawing.Size(121, 20);
-            this.txtAdet.TabIndex = 6;
             // 
             // KitapIslemleri
             // 

@@ -1,19 +1,22 @@
 ﻿using KutuphaneCodeFirst.Entities;
 using KutuphaneCodeFirst.Helpers;
+using KutuphaneCodeFirst.MockData;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using KutuphaneCodeFirst.MockData;
 
 namespace KutuphaneCodeFirst
 {
     public partial class KitapIslemleri : Form
     {
+        private Kitap _seciliKitap = new Kitap();
+        private Yazar _seciliYazar = new Yazar();
+
         public KitapIslemleri()
         {
             InitializeComponent();
         }
-       
         private void KitapIslemleri_Load(object sender, EventArgs e)
         {
             cmbYazar.DataSource = Mock.Yazarlar;
@@ -27,32 +30,56 @@ namespace KutuphaneCodeFirst
 
         private void lstKitaplar_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //seciliKitap = (KitapViewModel)lstKitaplar.SelectedItem;
-            //seciliYazar = (from o in Mock.Kitaplar
-            //             where o.YazarId == seciliKitap.YazarId
-            //             select o.Yazar) as Yazar;
-            //txtKitapAdi.Text = seciliKitap.KitapAdi;
-            //txtKategori.Text = seciliKitap.Kategori;
-            //cmbYazar.SelectedItem = seciliYazar;
-            //nuAdet.Value = seciliKitap.Adet;
-
-            
+            _seciliKitap = (Kitap)lstKitaplar.SelectedItem;
+            _seciliYazar = (Mock.Yazarlar.Where(o => o.YazarId == _seciliKitap.YazarId)).First();
+               
+            txtKitapAdi.Text = _seciliKitap.KitapAdi;
+            txtKategori.Text = _seciliKitap.Kategori;
+            cmbYazar.SelectedItem = _seciliYazar;
+            txtAdet.Text = _seciliKitap.Adet.ToString();
         }
 
         private void btnKitapKaydet_Click(object sender, EventArgs e)
         {
-            var yazar = cmbYazar.SelectedItem as Yazar;
-            if (yazar == null) return;
-           
-            var kitap = new Kitap
+            var db = new MyContext();
+            using (var tran = db.Database.BeginTransaction())
             {
-                KitapAdi = txtKitapAdi.Text,
-                Adet = Int32.Parse(txtAdet.Text),
-                Kategori = txtKategori.Text,
-                YazarId = yazar.YazarId,
-            };
-           var adet = KitapHelper.KitapEkle(kitap);
-           MessageBox.Show($@"{adet} adet Kitap eklendi.");
+                try
+                {
+                    var yazar = cmbYazar.SelectedItem as Yazar;
+                    if (yazar == null) return;
+
+                    var query = (from k in db.Kitaplar
+                        where k.KitapAdi == txtKitapAdi.Text
+                        select k.Adet);
+                   
+
+                    if (query.First() > 0)
+                    {
+                        MessageBox.Show(@"Eklemeye calistiginiz kitap zaten var.");
+                        tran.Rollback();
+                    }
+                    else
+                    {
+                        var kitap = new Kitap
+                        {
+                            KitapAdi = txtKitapAdi.Text,
+                            Adet = Int32.Parse(txtAdet.Text),
+                            Kategori = txtKategori.Text,
+                            YazarId = yazar.YazarId,
+                        };
+                        var adet = KitapHelper.KitapEkle(kitap);
+                        tran.Commit();
+                        MessageBox.Show($@"{adet} adet Kitap eklendi.");
+                    }
+                   
+                }
+                catch (Exception exception)
+                {
+                    tran.Rollback();
+                    MessageBox.Show(exception.Message);
+                }
+            }
         }
     }
 }

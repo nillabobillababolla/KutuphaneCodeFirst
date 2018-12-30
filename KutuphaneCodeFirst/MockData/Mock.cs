@@ -32,8 +32,8 @@ namespace KutuphaneCodeFirst.MockData
 
                 for (int i = 0; i < 25; i++)
                 {
-                    var kat = FakeData.TextData.GetAlphabetical(10).ToUpper();
-                    var ad = FakeData.TextData.GetAlphabetical(10).ToUpper();
+                    var kat = FakeData.TextData.GetAlphabetical(10).ToLower();
+                    var ad = FakeData.TextData.GetAlphabetical(10).ToLower();
                     Kitaplar.Add(new Kitap()
                     {
                         KitapAdi = ad.Length > 50 ? ad.Substring(0, 10) : ad,
