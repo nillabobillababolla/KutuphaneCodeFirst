@@ -14,7 +14,6 @@ namespace KutuphaneCodeFirst
         {
             InitializeComponent();
         }
-        MyContext db = new MyContext();
         private void KiralamaIslemleri_Load(object sender, EventArgs e)
         {
             ListeDoldur();
@@ -22,6 +21,7 @@ namespace KutuphaneCodeFirst
 
         private void ListeDoldur()
         {
+            var db = new MyContext();
             lstKitaplar.DataSource = db.Kitaplar.Select(x => new KitapViewModel
             {
                 Adet = x.Adet,
@@ -37,8 +37,8 @@ namespace KutuphaneCodeFirst
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            using (var tran = db.Database.BeginTransaction())
-            {
+            var db = new MyContext();
+            
                 try
                 {
                     if (cmbKiralayanlar.SelectedItem==null) return;
@@ -46,21 +46,17 @@ namespace KutuphaneCodeFirst
 
                     var kitap = (KitapViewModel)lstKitaplar.SelectedItem;
                     var seciliKitap = db.Kitaplar.SingleOrDefault(b => b.KitapId == kitap.KitapId);
-
                     var kiralayan = (Kiralayan)cmbKiralayanlar.SelectedItem;
 
                     if (KiralamaBusiness.Kirala(seciliKitap, kiralayan) <= 0) return;
-
-                    tran.Commit();
                     MessageBox.Show($@"{kitap} kitabı {kiralayan}'a verildi.");
                     ListeDoldur();
                 }
                 catch (Exception exception)
                 {
-                    tran.Rollback();
+                    
                     MessageBox.Show(exception.Message);
                 }
-            }
         }
 
         private void cmbKiralayanlar_SelectedIndexChanged(object sender, EventArgs e)
@@ -70,6 +66,7 @@ namespace KutuphaneCodeFirst
 
         private void UyeKitapListele()
         {
+            var db = new MyContext();
             if (cmbKiralayanlar.SelectedItem == null) return;
 
             var kiralayanId = ((Kiralayan)cmbKiralayanlar.SelectedItem).KiralayanId;
@@ -91,13 +88,13 @@ namespace KutuphaneCodeFirst
 
         private void btnTeslimAl_Click(object sender, EventArgs e)
         {
-            using (var tran = db.Database.BeginTransaction())
-            {
+            var db = new MyContext();
+            
                 if (cmbKiralayanlar.SelectedItem == null) return;
                 if (lstUyeKitaplari.SelectedItem == null) return;
 
                 var seciliUye = cmbKiralayanlar.SelectedItem as Kiralayan;
-                var seciliKitap = lstUyeKitaplari.SelectedItem as Kitap;
+                var seciliKitap = lstUyeKitaplari.SelectedItem as KiraViewModel;
 
                 try
                 {
@@ -106,7 +103,6 @@ namespace KutuphaneCodeFirst
 
                     if (KiralamaBusiness.TeslimAl(kitap, kiralayan) <= 0) return;
                     {
-                        tran.Commit();
                         UyeKitapListele();
                     }
                 }
@@ -114,7 +110,7 @@ namespace KutuphaneCodeFirst
                 {
                     MessageBox.Show(ex.Message);
                 }
-            }
+            
         }
     }
 }

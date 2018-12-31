@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using KutuphaneCodeFirst.BLL;
 using KutuphaneCodeFirst.ViewModels;
 
 namespace KutuphaneCodeFirst
@@ -98,7 +99,7 @@ namespace KutuphaneCodeFirst
                             YazarId = yazar.YazarId,
                         };
                         db.SaveChanges();
-                        KitapHelper.KitapEkle(kitap);
+                        KitapBusiness.KitapEkle(kitap);
                         tran.Commit();
                         MessageBox.Show($@"{kitap.KitapAdi} Kitabı Eklendi.");
                     }

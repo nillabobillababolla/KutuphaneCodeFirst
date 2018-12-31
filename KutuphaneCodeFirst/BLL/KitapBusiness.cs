@@ -1,10 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using KutuphaneCodeFirst.Entities;
 
-namespace KutuphaneCodeFirst.Helpers
+namespace KutuphaneCodeFirst.BLL
 {
-   public static class KitapHelper
+   public static class KitapBusiness
     {
         public static int KitapEkle(Kitap kitap)
         {

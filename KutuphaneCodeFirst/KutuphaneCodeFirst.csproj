@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\KiralamaBusiness.cs" />
+    <Compile Include="BLL\KitapBusiness.cs" />
     <Compile Include="CalisanIslemleri.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,7 +76,6 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\EntityHelper.cs" />
-    <Compile Include="Helpers\KitapHelper.cs" />
     <Compile Include="KiralamaIslemleri.cs">
       <SubType>Form</SubType>
     </Compile>
