@@ -1,11 +1,13 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace KutuphaneCodeFirst.Entities
 {
     [Table("Kiralayanlar")]
-   public class Kiralayan
+    public class Kiralayan
     {
         [Key]
         public int KiralayanId { get; set; }
@@ -15,18 +17,20 @@ namespace KutuphaneCodeFirst.Entities
         //[Required]
         //public string Tckn { get; set; }
 
-        [StringLength(50,ErrorMessage = "Ad en fazla 50 karakter olabilir.")]
+        [StringLength(50, ErrorMessage = "Ad en fazla 50 karakter olabilir.")]
         public string KiralayanAd { get; set; }
 
         [StringLength(50, ErrorMessage = "Soyad en fazla 50 karakter olabilir.")]
         public string KiralayanSoyad { get; set; }
 
 
-        [StringLength(200,ErrorMessage = "Adres en fazla 200 karakter olabilir.")]
+        [StringLength(200, ErrorMessage = "Adres en fazla 200 karakter olabilir.")]
         public string Adres { get; set; }
 
         public DateTime KayıtTarihi { get; set; } = DateTime.Now;
 
         public override string ToString() => $"{KiralayanAd} {KiralayanSoyad}";
+
+        public virtual ICollection<Kira> Kiralar { get; set; } = new HashSet<Kira>();
     }
 }

@@ -2,14 +2,16 @@
 using KutuphaneCodeFirst.Helpers;
 using KutuphaneCodeFirst.MockData;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using KutuphaneCodeFirst.ViewModels;
 
 namespace KutuphaneCodeFirst
 {
     public partial class KitapIslemleri : Form
     {
-        private Kitap _seciliKitap = new Kitap();
+        private KitapViewModel _seciliKitap = new KitapViewModel();
         private Yazar _seciliYazar = new Yazar();
 
         public KitapIslemleri()
@@ -24,10 +26,23 @@ namespace KutuphaneCodeFirst
         private void ListeDoldur()
         {
             var db = new MyContext();
-            Mock.Yazarlar = db.Yazarlar.ToList();
-            Mock.Kitaplar = db.Kitaplar.ToList();
-            lstKitaplar.DataSource = Mock.Kitaplar;
-            cmbYazar.DataSource = Mock.Yazarlar;
+
+            //Mock.Yazarlar = db.Yazarlar.ToList();
+            //Mock.Kitaplar = db.Kitaplar.ToList();
+            cmbYazar.DataSource = db.Yazarlar.ToList();
+
+            lstKitaplar.DataSource = db.Kitaplar.Select(x => new KitapViewModel
+            {
+                Adet = x.Adet,
+                KitapAdi = x.KitapAdi,
+                Kategori = x.Kategori,
+                KitapId = x.KitapId,
+                YazarId = x.YazarId,
+                YazarAdi = x.Yazar.YazarAd,
+                YazarSoyadi = x.Yazar.YazarSoyad
+            }).ToList();
+
+            
         }
 
         private void lstKitaplar_SelectedIndexChanged(object sender, EventArgs e)
@@ -37,12 +52,23 @@ namespace KutuphaneCodeFirst
 
         private void KtpAyrintiGetir()
         {
-            _seciliKitap = (Kitap)lstKitaplar.SelectedItem;
-            _seciliYazar = (Mock.Yazarlar.Where(o => o.YazarId == _seciliKitap.YazarId)).First();
-
+            var db = new MyContext();
+            _seciliKitap = (KitapViewModel)lstKitaplar.SelectedItem;
+            _seciliYazar = (db.Yazarlar.Where(o => o.YazarId == _seciliKitap.YazarId)).First();
             txtKitapAdi.Text = _seciliKitap.KitapAdi;
             txtKategori.Text = _seciliKitap.Kategori;
-            cmbYazar.SelectedItem = _seciliYazar;
+            
+            var cmbYazarList = cmbYazar.DataSource as List<Yazar>;
+            for (int i = 0; i < cmbYazarList.Count; i++)
+            {
+                var yzr = cmbYazarList[i];
+                if (yzr.YazarId == _seciliYazar.YazarId)
+                {
+                    cmbYazar.SelectedIndex = i;
+                    break;
+                }
+            }
+
             txtAdet.Text = _seciliKitap.Adet.ToString();
         }
 
@@ -95,7 +121,7 @@ namespace KutuphaneCodeFirst
             if (lstKitaplar.SelectedItem == null) return;
 
             var db = new MyContext();
-            var seciliKitap = (Kitap)lstKitaplar.SelectedItem;
+            var seciliKitap = (KitapViewModel)lstKitaplar.SelectedItem;
             var result = db.Kitaplar.SingleOrDefault(b => b.KitapId == seciliKitap.KitapId);
 
             if (seciliKitap == null) return;

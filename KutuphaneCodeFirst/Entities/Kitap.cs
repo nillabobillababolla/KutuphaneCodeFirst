@@ -1,11 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 // ReSharper disable ClassNeverInstantiated.Global
 
 namespace KutuphaneCodeFirst.Entities
 {
     [Table("Kitaplar")]
-   public class Kitap
+    public class Kitap
     {
         [Key]
         public int KitapId { get; set; }
@@ -15,7 +17,7 @@ namespace KutuphaneCodeFirst.Entities
         public string KitapAdi { get; set; }
 
         [Required]
-        [StringLength(50,ErrorMessage = "Kategori adi en fazla 50 karakter olabilir.")]
+        [StringLength(50, ErrorMessage = "Kategori adi en fazla 50 karakter olabilir.")]
         public string Kategori { get; set; }
 
         public int Adet { get; set; }
@@ -27,5 +29,6 @@ namespace KutuphaneCodeFirst.Entities
 
         public override string ToString() => $"{KitapAdi}";
 
+        public virtual ICollection<Kira> Kiralar { get; set; } = new HashSet<Kira>();
     }
 }

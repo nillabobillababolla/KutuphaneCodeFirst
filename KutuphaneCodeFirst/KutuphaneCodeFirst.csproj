@@ -92,6 +92,14 @@
     <Compile Include="Migrations\201812310547472_Viewmdeltm.Designer.cs">
       <DependentUpon>201812310547472_Viewmdeltm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812310609121_aasd.cs" />
+    <Compile Include="Migrations\201812310609121_aasd.Designer.cs">
+      <DependentUpon>201812310609121_aasd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812310625088_aasda.cs" />
+    <Compile Include="Migrations\201812310625088_aasda.Designer.cs">
+      <DependentUpon>201812310625088_aasda.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MockData\Mock.cs" />
     <Compile Include="MyContext.cs" />
@@ -124,6 +132,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812310547472_Viewmdeltm.resx">
       <DependentUpon>201812310547472_Viewmdeltm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812310609121_aasd.resx">
+      <DependentUpon>201812310609121_aasd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812310625088_aasda.resx">
+      <DependentUpon>201812310625088_aasda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
