@@ -7,13 +7,13 @@ namespace KutuphaneCodeFirst.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Viewmdeltm : IMigrationMetadata
+    public sealed partial class KitapAdi_isunique : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Viewmdeltm));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(KitapAdi_isunique));
         
         string IMigrationMetadata.Id
         {
-            get { return "201812310547472_Viewmdeltm"; }
+            get { return "201812310644273_KitapAdi_isunique"; }
         }
         
         string IMigrationMetadata.Source

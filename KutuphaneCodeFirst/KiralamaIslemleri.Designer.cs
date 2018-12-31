@@ -33,6 +33,7 @@
             this.btnKaydet = new System.Windows.Forms.Button();
             this.lstUyeKitaplari = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnTeslimAl = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lstKitaplar
@@ -79,11 +80,22 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Seçili Üyenin Elinde Bulunan Kitaplar:";
             // 
+            // btnTeslimAl
+            // 
+            this.btnTeslimAl.Location = new System.Drawing.Point(345, 314);
+            this.btnTeslimAl.Name = "btnTeslimAl";
+            this.btnTeslimAl.Size = new System.Drawing.Size(104, 23);
+            this.btnTeslimAl.TabIndex = 5;
+            this.btnTeslimAl.Text = "Kitabı Teslim Al";
+            this.btnTeslimAl.UseVisualStyleBackColor = true;
+            this.btnTeslimAl.Click += new System.EventHandler(this.btnTeslimAl_Click);
+            // 
             // KiralamaIslemleri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnTeslimAl);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lstUyeKitaplari);
             this.Controls.Add(this.btnKaydet);
@@ -105,5 +117,6 @@
         private System.Windows.Forms.Button btnKaydet;
         private System.Windows.Forms.ListBox lstUyeKitaplari;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnTeslimAl;
     }
 }

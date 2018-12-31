@@ -27,9 +27,7 @@ namespace KutuphaneCodeFirst
         {
             var db = new MyContext();
 
-            //Mock.Yazarlar = db.Yazarlar.ToList();
-            //Mock.Kitaplar = db.Kitaplar.ToList();
-            cmbYazar.DataSource = db.Yazarlar.ToList();
+            cmbYazar.DataSource = db.Yazarlar.OrderBy(b=>b.YazarAd).ToList();
 
             lstKitaplar.DataSource = db.Kitaplar.Select(x => new KitapViewModel
             {
@@ -80,15 +78,13 @@ namespace KutuphaneCodeFirst
             {
                 try
                 {
-                    var yazar = cmbYazar.SelectedItem as Yazar;
-                    if (yazar == null) return;
+                    if (!(cmbYazar.SelectedItem is Yazar yazar)) return;
 
-                    var query = (from k in db.Kitaplar
+                    var kitapAdet = (from k in db.Kitaplar
                         where k.KitapAdi == txtKitapAdi.Text
                         select k.Adet);
-                   
 
-                    if (query.First() > 0)
+                    if (kitapAdet.First() >= 0)
                     {
                         MessageBox.Show(@"Eklemeye calistiginiz kitap zaten var.");
                     }
@@ -106,7 +102,6 @@ namespace KutuphaneCodeFirst
                         tran.Commit();
                         MessageBox.Show($@"{kitap.KitapAdi} Kitabı Eklendi.");
                     }
-                   
                 }
                 catch (Exception exception)
                 {

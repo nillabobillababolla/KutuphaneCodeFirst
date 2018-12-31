@@ -88,17 +88,9 @@
     <Compile Include="KitapIslemleri.Designer.cs">
       <DependentUpon>KitapIslemleri.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201812310547472_Viewmdeltm.cs" />
-    <Compile Include="Migrations\201812310547472_Viewmdeltm.Designer.cs">
-      <DependentUpon>201812310547472_Viewmdeltm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812310609121_aasd.cs" />
-    <Compile Include="Migrations\201812310609121_aasd.Designer.cs">
-      <DependentUpon>201812310609121_aasd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812310625088_aasda.cs" />
-    <Compile Include="Migrations\201812310625088_aasda.Designer.cs">
-      <DependentUpon>201812310625088_aasda.cs</DependentUpon>
+    <Compile Include="Migrations\201812310644273_KitapAdi_isunique.cs" />
+    <Compile Include="Migrations\201812310644273_KitapAdi_isunique.Designer.cs">
+      <DependentUpon>201812310644273_KitapAdi_isunique.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MockData\Mock.cs" />
@@ -111,6 +103,7 @@
     <Compile Include="UyeIslemleri.Designer.cs">
       <DependentUpon>UyeIslemleri.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\KiraViewModel.cs" />
     <Compile Include="ViewModels\KitapViewModel.cs" />
     <Compile Include="YazarIslemleri.cs">
       <SubType>Form</SubType>
@@ -130,14 +123,8 @@
     <EmbeddedResource Include="KitapIslemleri.resx">
       <DependentUpon>KitapIslemleri.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812310547472_Viewmdeltm.resx">
-      <DependentUpon>201812310547472_Viewmdeltm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812310609121_aasd.resx">
-      <DependentUpon>201812310609121_aasd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812310625088_aasda.resx">
-      <DependentUpon>201812310625088_aasda.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201812310644273_KitapAdi_isunique.resx">
+      <DependentUpon>201812310644273_KitapAdi_isunique.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

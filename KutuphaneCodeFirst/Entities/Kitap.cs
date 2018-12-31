@@ -12,6 +12,7 @@ namespace KutuphaneCodeFirst.Entities
         [Key]
         public int KitapId { get; set; }
 
+        [Index("IX_KitapAdi",IsUnique = true)]
         [Required]
         [StringLength(50, ErrorMessage = "Kitap adi en fazla 50 karakter olabilir.")]
         public string KitapAdi { get; set; }
