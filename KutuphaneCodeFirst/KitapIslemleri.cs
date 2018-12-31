@@ -1,12 +1,10 @@
-﻿using KutuphaneCodeFirst.Entities;
-using KutuphaneCodeFirst.Helpers;
-using KutuphaneCodeFirst.MockData;
+﻿using KutuphaneCodeFirst.BLL;
+using KutuphaneCodeFirst.Entities;
+using KutuphaneCodeFirst.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using KutuphaneCodeFirst.BLL;
-using KutuphaneCodeFirst.ViewModels;
 
 namespace KutuphaneCodeFirst
 {
@@ -58,22 +56,20 @@ namespace KutuphaneCodeFirst
             txtKategori.Text = _seciliKitap.Kategori;
             
             var cmbYazarList = cmbYazar.DataSource as List<Yazar>;
-            for (int i = 0; i < cmbYazarList.Count; i++)
-            {
-                var yzr = cmbYazarList[i];
-                if (yzr.YazarId == _seciliYazar.YazarId)
+            if (cmbYazarList != null)
+                for (var i = 0; i < cmbYazarList.Count; i++)
                 {
+                    var yzr = cmbYazarList[i];
+                    if (yzr.YazarId != _seciliYazar.YazarId) continue;
                     cmbYazar.SelectedIndex = i;
                     break;
                 }
-            }
 
             txtAdet.Text = _seciliKitap.Adet.ToString();
         }
 
         private void btnKitapKaydet_Click(object sender, EventArgs e)
         {
-
             var db = new MyContext();
             using (var tran = db.Database.BeginTransaction())
             {

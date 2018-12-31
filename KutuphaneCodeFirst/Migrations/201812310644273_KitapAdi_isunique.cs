@@ -1,8 +1,8 @@
+// ReSharper disable InconsistentNaming
 namespace KutuphaneCodeFirst.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class KitapAdi_isunique : DbMigration
     {
         public override void Up()

@@ -1,10 +1,9 @@
-﻿using KutuphaneCodeFirst.Entities;
-using KutuphaneCodeFirst.MockData;
+﻿using KutuphaneCodeFirst.BLL;
+using KutuphaneCodeFirst.Entities;
+using KutuphaneCodeFirst.ViewModels;
 using System;
 using System.Linq;
 using System.Windows.Forms;
-using KutuphaneCodeFirst.BLL;
-using KutuphaneCodeFirst.ViewModels;
 
 namespace KutuphaneCodeFirst
 {
