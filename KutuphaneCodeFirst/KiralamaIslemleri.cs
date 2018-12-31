@@ -32,7 +32,6 @@ namespace KutuphaneCodeFirst
                 YazarAdi = x.Yazar.YazarAd,
                 YazarSoyadi = x.Yazar.YazarSoyad
             }).ToList();
-
             cmbKiralayanlar.DataSource = db.Kiralayanlar.OrderBy(b => b.KiralayanAd).ToList();
         }
 
@@ -105,10 +104,11 @@ namespace KutuphaneCodeFirst
                     var kiralayan = db.Kiralayanlar.SingleOrDefault(x => x.KiralayanId == seciliUye.KiralayanId);
                     var kitap = db.Kitaplar.SingleOrDefault(y => y.KitapId == seciliKitap.KitapId);
 
-                    KiralamaBusiness.TeslimAl(kitap, kiralayan);
-
-                    tran.Commit();
-                    ListeDoldur();
+                    if (KiralamaBusiness.TeslimAl(kitap, kiralayan) <= 0) return;
+                    {
+                        tran.Commit();
+                        UyeKitapListele();
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -116,7 +116,5 @@ namespace KutuphaneCodeFirst
                 }
             }
         }
-
-       
     }
 }
