@@ -1,5 +1,4 @@
-﻿using System;
-using KutuphaneCodeFirst.Entities;
+﻿using KutuphaneCodeFirst.Entities;
 // ReSharper disable UnusedMember.Global
 
 namespace KutuphaneCodeFirst.BLL

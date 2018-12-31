@@ -88,45 +88,9 @@
     <Compile Include="KitapIslemleri.Designer.cs">
       <DependentUpon>KitapIslemleri.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201812282200195_A1.cs" />
-    <Compile Include="Migrations\201812282200195_A1.Designer.cs">
-      <DependentUpon>201812282200195_A1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812282204182_KiraCompositKey.cs" />
-    <Compile Include="Migrations\201812282204182_KiraCompositKey.Designer.cs">
-      <DependentUpon>201812282204182_KiraCompositKey.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812291042182_A5.cs" />
-    <Compile Include="Migrations\201812291042182_A5.Designer.cs">
-      <DependentUpon>201812291042182_A5.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812292200327_KitapHelper.cs" />
-    <Compile Include="Migrations\201812292200327_KitapHelper.Designer.cs">
-      <DependentUpon>201812292200327_KitapHelper.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812300822293_Tablolardegisti.cs" />
-    <Compile Include="Migrations\201812300822293_Tablolardegisti.Designer.cs">
-      <DependentUpon>201812300822293_Tablolardegisti.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812300839524_yazartablosuHata.cs" />
-    <Compile Include="Migrations\201812300839524_yazartablosuHata.Designer.cs">
-      <DependentUpon>201812300839524_yazartablosuHata.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812300947048_A11.cs" />
-    <Compile Include="Migrations\201812300947048_A11.Designer.cs">
-      <DependentUpon>201812300947048_A11.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812301015463_A33.cs" />
-    <Compile Include="Migrations\201812301015463_A33.Designer.cs">
-      <DependentUpon>201812301015463_A33.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812301017040_A335.cs" />
-    <Compile Include="Migrations\201812301017040_A335.Designer.cs">
-      <DependentUpon>201812301017040_A335.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812301900194_A223.cs" />
-    <Compile Include="Migrations\201812301900194_A223.Designer.cs">
-      <DependentUpon>201812301900194_A223.cs</DependentUpon>
+    <Compile Include="Migrations\201812310547472_Viewmdeltm.cs" />
+    <Compile Include="Migrations\201812310547472_Viewmdeltm.Designer.cs">
+      <DependentUpon>201812310547472_Viewmdeltm.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MockData\Mock.cs" />
@@ -158,35 +122,8 @@
     <EmbeddedResource Include="KitapIslemleri.resx">
       <DependentUpon>KitapIslemleri.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812282200195_A1.resx">
-      <DependentUpon>201812282200195_A1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812282204182_KiraCompositKey.resx">
-      <DependentUpon>201812282204182_KiraCompositKey.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812291042182_A5.resx">
-      <DependentUpon>201812291042182_A5.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812292200327_KitapHelper.resx">
-      <DependentUpon>201812292200327_KitapHelper.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812300822293_Tablolardegisti.resx">
-      <DependentUpon>201812300822293_Tablolardegisti.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812300839524_yazartablosuHata.resx">
-      <DependentUpon>201812300839524_yazartablosuHata.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812300947048_A11.resx">
-      <DependentUpon>201812300947048_A11.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812301015463_A33.resx">
-      <DependentUpon>201812301015463_A33.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812301017040_A335.resx">
-      <DependentUpon>201812301017040_A335.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812301900194_A223.resx">
-      <DependentUpon>201812301900194_A223.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201812310547472_Viewmdeltm.resx">
+      <DependentUpon>201812310547472_Viewmdeltm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

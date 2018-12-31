@@ -10,6 +10,6 @@
         public string Kategori { get; set; }
         public int Adet { get; set; }
 
-        public override string ToString() => $"{KitapAdi}{YazarAdi}{YazarSoyadi}{Kategori}{Adet}";
+        public override string ToString() => $"{KitapAdi}  ----  {YazarAdi}{YazarSoyadi}";
     }
 }

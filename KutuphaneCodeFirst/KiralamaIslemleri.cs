@@ -1,8 +1,8 @@
-﻿using System;
+﻿using KutuphaneCodeFirst.Entities;
+using KutuphaneCodeFirst.MockData;
+using System;
 using System.Linq;
 using System.Windows.Forms;
-using KutuphaneCodeFirst.Entities;
-using KutuphaneCodeFirst.MockData;
 
 namespace KutuphaneCodeFirst
 {
@@ -42,21 +42,25 @@ namespace KutuphaneCodeFirst
 
                         var kiralayan = (Kiralayan)cmbKiralayanlar.SelectedItem;
 
-                        if (seciliKitap.Adet==0)
+                        if (seciliKitap != null && seciliKitap.Adet==0)
                         {
                             MessageBox.Show(@"Kitap Stokta Yok!");
                             return;
                         }
 
-                        var kira = new Kira
+                        if (seciliKitap != null)
                         {
-                            KiralamaTarihi = DateTime.Now,
-                            KiralayanId = kiralayan.KiralayanId,
-                            KitapId = seciliKitap.KitapId,
-                        };
+                            var kira = new Kira
+                            {
+                                KiralamaTarihi = DateTime.Now,
+                                KiralayanId = kiralayan.KiralayanId,
+                                KitapId = seciliKitap.KitapId,
+                            };
 
-                        db.Kiralar.Add(kira);
-                        seciliKitap.Adet--;
+                            db.Kiralar.Add(kira);
+                        }
+
+                        if (seciliKitap != null) seciliKitap.Adet--;
                         db.SaveChanges();
                         tran.Commit();
                         MessageBox.Show($@"{kitap} kitabı {kiralayan}'a verildi.");

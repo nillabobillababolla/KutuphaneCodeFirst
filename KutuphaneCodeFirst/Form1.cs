@@ -1,9 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using KutuphaneCodeFirst.MockData;
 using System.Linq;
 using System.Windows.Forms;
-using KutuphaneCodeFirst.Entities;
-using KutuphaneCodeFirst.MockData;
-using KutuphaneCodeFirst.ViewModels;
 // ReSharper disable TooManyDeclarations
 
 namespace KutuphaneCodeFirst
