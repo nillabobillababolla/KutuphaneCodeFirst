@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnGuncelle = new System.Windows.Forms.Button();
             this.txtAdet = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,7 +43,6 @@
             this.lstKitaplar = new System.Windows.Forms.ListBox();
             this.cmsKitapSil = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnGuncelle = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.cmsKitapSil.SuspendLayout();
             this.SuspendLayout();
@@ -65,6 +65,16 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Kitap Ekleme";
+            // 
+            // btnGuncelle
+            // 
+            this.btnGuncelle.Location = new System.Drawing.Point(126, 137);
+            this.btnGuncelle.Name = "btnGuncelle";
+            this.btnGuncelle.Size = new System.Drawing.Size(58, 23);
+            this.btnGuncelle.TabIndex = 7;
+            this.btnGuncelle.Text = "Güncelle";
+            this.btnGuncelle.UseVisualStyleBackColor = true;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // txtAdet
             // 
@@ -161,19 +171,9 @@
             // silToolStripMenuItem
             // 
             this.silToolStripMenuItem.Name = "silToolStripMenuItem";
-            this.silToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.silToolStripMenuItem.Size = new System.Drawing.Size(86, 22);
             this.silToolStripMenuItem.Text = "Sil";
             this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
-            // 
-            // btnGuncelle
-            // 
-            this.btnGuncelle.Location = new System.Drawing.Point(126, 137);
-            this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(58, 23);
-            this.btnGuncelle.TabIndex = 7;
-            this.btnGuncelle.Text = "Güncelle";
-            this.btnGuncelle.UseVisualStyleBackColor = true;
-            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // KitapIslemleri
             // 

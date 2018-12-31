@@ -56,6 +56,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\CalisanBusiness.cs" />
     <Compile Include="BLL\KiralamaBusiness.cs" />
     <Compile Include="BLL\KitapBusiness.cs" />
     <Compile Include="CalisanIslemleri.cs">

@@ -71,8 +71,7 @@ namespace KutuphaneCodeFirst
         private void btnKitapKaydet_Click(object sender, EventArgs e)
         {
             var db = new MyContext();
-            using (var tran = db.Database.BeginTransaction())
-            {
+           
                 try
                 {
                     if (!(cmbYazar.SelectedItem is Yazar yazar)) return;
@@ -96,16 +95,15 @@ namespace KutuphaneCodeFirst
                         };
                         db.SaveChanges();
                         KitapBusiness.KitapEkle(kitap);
-                        tran.Commit();
+                        
                         MessageBox.Show($@"{kitap.KitapAdi} Kitabı Eklendi.");
                     }
                 }
                 catch (Exception exception)
                 {
-                    tran.Rollback();
                     MessageBox.Show(exception.Message);
                 }
-            }
+            
         }
 
         private void btnGuncelle_Click(object sender, EventArgs e)
