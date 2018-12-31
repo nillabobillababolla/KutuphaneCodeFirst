@@ -27,8 +27,10 @@ namespace KutuphaneCodeFirst
             var db = new MyContext();
 
             cmbYazar.DataSource = db.Yazarlar.OrderBy(b=>b.YazarAd).ToList();
-
-            lstKitaplar.DataSource = db.Kitaplar.Select(x => new KitapViewModel
+            // Kitaplar tablosundaki verileri önce kitap adına göre alfabetik sonra adetine göre azalan sırada ekranda göster.
+            lstKitaplar.DataSource = db.Kitaplar.OrderBy(x=>x.KitapAdi)
+                .ThenByDescending(y=>y.Adet)
+                .Select(x => new KitapViewModel
             {
                 Adet = x.Adet,
                 KitapAdi = x.KitapAdi,
@@ -125,6 +127,7 @@ namespace KutuphaneCodeFirst
                         result.KitapAdi = txtKitapAdi.Text.ToLower();
                         result.Adet = int.Parse(txtAdet.Text);
                         result.Kategori = txtKategori.Text.ToLower();
+                        result.YazarId = ((Yazar) cmbYazar.SelectedItem).YazarId;
                     }
 
                     db.SaveChanges();

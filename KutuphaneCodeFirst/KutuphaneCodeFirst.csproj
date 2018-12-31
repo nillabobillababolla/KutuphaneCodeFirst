@@ -92,6 +92,10 @@
     <Compile Include="Migrations\201812310840437_Business.Designer.cs">
       <DependentUpon>201812310840437_Business.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812311030524_businessdeleted.cs" />
+    <Compile Include="Migrations\201812311030524_businessdeleted.Designer.cs">
+      <DependentUpon>201812311030524_businessdeleted.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MockData\Mock.cs" />
     <Compile Include="MyContext.cs" />
@@ -125,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812310840437_Business.resx">
       <DependentUpon>201812310840437_Business.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812311030524_businessdeleted.resx">
+      <DependentUpon>201812311030524_businessdeleted.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

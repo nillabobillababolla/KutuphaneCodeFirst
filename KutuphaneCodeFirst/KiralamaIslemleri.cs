@@ -21,7 +21,10 @@ namespace KutuphaneCodeFirst
         private void ListeDoldur()
         {
             var db = new MyContext();
-            lstKitaplar.DataSource = db.Kitaplar.Select(x => new KitapViewModel
+            lstKitaplar.DataSource = db.Kitaplar
+                .OrderBy(x=>x.KitapAdi)
+                .ThenByDescending(y=>y.Adet)
+                .Select(x => new KitapViewModel
             {
                 Adet = x.Adet,
                 KitapAdi = x.KitapAdi,
@@ -72,6 +75,8 @@ namespace KutuphaneCodeFirst
             if (cmbKiralayanlar.SelectedItem == null) return;
             var sorgu = db.Kiralar
                 .Where(x => x.KiralayanId == kiralayanId)
+                .OrderBy(y=>y.Kitap.KitapAdi)
+                .ThenByDescending(z=>z.Kitap.Adet)
                 .Select(x => new KiraViewModel()
                 {
                     KitapId = x.KitapId,
