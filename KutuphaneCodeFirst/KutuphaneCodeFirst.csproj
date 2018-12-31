@@ -88,10 +88,6 @@
     <Compile Include="KitapIslemleri.Designer.cs">
       <DependentUpon>KitapIslemleri.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201812310644273_KitapAdi_isunique.cs" />
-    <Compile Include="Migrations\201812310644273_KitapAdi_isunique.Designer.cs">
-      <DependentUpon>201812310644273_KitapAdi_isunique.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201812310840437_Business.cs" />
     <Compile Include="Migrations\201812310840437_Business.Designer.cs">
       <DependentUpon>201812310840437_Business.cs</DependentUpon>
@@ -126,9 +122,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KitapIslemleri.resx">
       <DependentUpon>KitapIslemleri.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812310644273_KitapAdi_isunique.resx">
-      <DependentUpon>201812310644273_KitapAdi_isunique.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812310840437_Business.resx">
       <DependentUpon>201812310840437_Business.cs</DependentUpon>
