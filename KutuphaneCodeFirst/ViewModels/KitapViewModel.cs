@@ -9,7 +9,6 @@
         public string YazarSoyadi { get; set; }
         public string Kategori { get; set; }
         public int Adet { get; set; }
-
         public override string ToString() => $"{KitapAdi}  ----  {YazarAdi} {YazarSoyadi}";
     }
 }

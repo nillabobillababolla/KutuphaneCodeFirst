@@ -38,8 +38,6 @@ namespace KutuphaneCodeFirst
                 YazarAdi = x.Yazar.YazarAd,
                 YazarSoyadi = x.Yazar.YazarSoyad
             }).ToList();
-
-            
         }
 
         private void lstKitaplar_SelectedIndexChanged(object sender, EventArgs e)
@@ -163,7 +161,6 @@ namespace KutuphaneCodeFirst
                 try
                 {
                     db.Kitaplar.Remove(silinecekKitap);
-
                     db.SaveChanges();
                     tran.Commit();
                     MessageBox.Show($@"{silinecekKitap.KitapAdi} adlı kitap silindi.",@"Uyarı",MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
